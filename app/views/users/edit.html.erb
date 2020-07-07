@@ -1,0 +1,24 @@
+<div class="main users-edit">
+  <div class="container">
+    <h1 class="form-heading">やりなおすニャ！</h1>
+    <div class="form users-form">
+      <div class="form-body">
+        <% @user.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message+"ニャ！" %>
+          </div>
+        <% end %>
+
+        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+          <p>飼い主名</p>
+          <input name="name" value="<%= @user.name %>">
+          <p>画像</p>
+          <input name="image" type="file">
+          <p>メールアドレス</p>
+          <input name="email" value="<%= @user.email %>">
+          <button type="submit">変更する<i class="fas fa-paw"></i></button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
