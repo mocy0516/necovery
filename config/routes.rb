@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+  resources :necovery
+  root "home#top"
+  
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
