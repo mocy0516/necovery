@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :necovery
   root "home#top"
-  
+
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
   post "users/create" => "users#create"
@@ -17,7 +16,6 @@ Rails.application.routes.draw do
   get "posts/:id/edit" => "posts#edit"
   post "posts/:id/update" => "posts#update"
   post "posts/:id/destroy" => "posts#destroy"
-
-  get "/" => "home#top"
   get "about" => "home#about"
+  get "/" => "home#top"
 end
