@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root :to => "home#top"
+  root 'home#top'
 
   post "users/:id/update" => "users#update"
   get "users/:id/edit" => "users#edit"
@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   get "users/index" => "users#index"
   get "users/:id" => "users#show"
 
-  get 'users/index'
   get "posts/index" => "posts#index"
   get "posts/new" => "posts#new"
   get "posts/:id" => "posts#show"
