@@ -1,4 +1,7 @@
-/* users/index ================================ */
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/* user index */
 .users-heading {
   font-weight: 300;
   margin: 60px 0 20px;
@@ -44,13 +47,11 @@
   vertical-align: middle;
 }
 
-/* users/show ================================ */
-.user-show {
-  text-align: center;
-}
-
+/* users show */
 .user {
+  background-color: lemonchiffon;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .user img {
@@ -63,13 +64,11 @@
 }
 
 .user h2 {
-  font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
 }
 
 .user p {
-  font-size: 13px;
   margin-bottom: 15px;
 }
 
@@ -110,13 +109,42 @@
   color: #afb6bf;
 }
 
-/* users/new, users/edit ================================ */
+/* users new edit */
 .users-form input {
   margin-bottom: 15px;
 }
 
+.user-preview img {
+  width: 200px;
+  height: 200px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  margin:10px 0 20px 32% ;
+  object-fit: cover;
 
 
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+}
+
+.user-icon-button {
+  padding:0 0 26% 18%;
+}
+
+.user-icon-button a {
+  background-color: coral;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 300;
+  width: 170px;
+  height: 50px;
+  border-radius: 30px;
+  border-style: solid;
+  border-width: thick;
+  border-color:gray;
+  margin: 8px 7% ;
+  padding: 6px 0 0 12px;
+  float: left;
+  position: relative;
+  left:14%;
+  font-family:"Nico Moji","ヒラギノ丸ゴ ProN",sans-serif;
+}

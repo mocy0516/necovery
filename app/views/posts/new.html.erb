@@ -1,18 +1,31 @@
 <div class="main posts-new">
   <div class="container">
-    <h1 class="form-heading">デリバリーするニャ！</h1>
-    <%= form_tag("/posts/create")do %>
-      <div class="form">
-        <div class="form-body">
-          <% @post.errors.full_messages.each do |message| %>
-            <div class="form-error">
-              <%= message+"ニャ！" %>
-            </div>
-          <% end %>
-          <textarea name="content"><%=@post.content %></textarea>
-          <button type="submit">デリバリー <i class="fas fa-paw"></i></button>
+  <h1 class="form-heading">デリバリーするニャ！</h1>
+    <div class="form">
+      <div class="form-body">
+        <% @post.errors.full_messages.each do |message| %>
+          <div class="form-error">
+            <%= message+"ニャ！" %>
+          </div>
+        <% end %>
+        <div class="post-preview">
+          <div id="preview">
+          </div>
         </div>
+        <%= form_tag("/posts/create",{multipart: true})do %>
+          <div class="post-img-button">
+            <label>
+              <input name="img" type="file" accept="image/*" id="postUp">
+              <a>ネコをアップロード</a>
+            </label>
+          </div>
+          <div class="after-select-img" hidden>
+            <p>内容</p>
+            <textarea name="content"></textarea>
+            <button type="submit">デリバリー <i class="fas fa-paw"></i></button>
+         </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>

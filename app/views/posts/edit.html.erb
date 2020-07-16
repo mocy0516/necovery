@@ -1,7 +1,7 @@
 <div class="main posts-new">
   <div class="container">
     <h1 class="form-heading">やりなおすニャ！</h1>
-    <%= form_tag("/posts/#{@post.id}/update") do %>
+    <%= form_tag("/posts/#{@post.id}/update", {multipart: true}) do %>
       <div class="form">
         <div class="form-body">
           <% @post.errors.full_messages.each do |message| %>
@@ -9,7 +9,11 @@
               <%= message+"ニャ！" %>
             </div>
           <% end %>
-          <textarea name="content"><%= @post.content %></textarea>
+          <div class="post-preview">
+            <%= image_tag @post.img.url %>
+          </div>
+          <p>内容</p>
+          <textarea name="content"><%=@post.content %></textarea>
           <button type="submit">デリバリー <i class="fas fa-paw"></i></button>
         </div>
       </div>

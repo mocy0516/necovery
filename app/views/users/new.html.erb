@@ -9,11 +9,13 @@
           </div>
         <% end %>
 
-        <%= form_tag("/users/create") do %>
-          <p>飼い主名</p>
+        <%= form_tag("/users/create", {multipart: true}) do %>
+          <p>飼い主ID</p>
           <input name="name" value="<%= @user.name %>">
           <p>メールアドレス</p>
           <input name="email" value="<%= @user.email %>">
+          <p>パスワード</p>
+          <input name="password" type="password" value="<%= @user.password %>">
           <button type="submit">飼い主になる <i class="fas fa-paw"></i></button>
         <% end %>
       </div>

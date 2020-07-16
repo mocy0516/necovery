@@ -3,9 +3,10 @@ ja:
   activerecord:
     attributes:
       post:
-        content: 内容
+        content: コメント
+        img: ネコ画像
       user:
-        name: 飼い主名
+        name: 飼い主ID
         email: メールアドレス
 
     errors:

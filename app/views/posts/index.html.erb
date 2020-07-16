@@ -2,7 +2,21 @@
   <div class="container">
     <% @posts.each do |post| %>
       <div class="posts-index-item">
-        <%= link_to(post.content,"/posts/#{post.id}") %>
+        <div class="post-left">
+          <% if post.user.image_name? %>
+            <%= link_to image_tag(user.image_name.url),"/users/#{post.user.id}"  %>
+          <% else %>
+            <%= link_to image_tag("/assets/default.jpg"),"/users/#{post.user.id}" %>
+          <% end %>
+        </div>
+        <div class="post-right">
+          <div class="post-user-name">
+            <%= link_to(post.user.name,"/users/#{post.user.id}") %>
+          </div>
+          <%= link_to image_tag(post.img.url),"/posts/#{post.id}" %>
+          <%= @likes_count %>
+          <%= post.content %>
+        </div>
       </div>
     <% end %>
   </div>

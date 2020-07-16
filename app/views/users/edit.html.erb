@@ -8,16 +8,33 @@
             <%= message+"ニャ！" %>
           </div>
         <% end %>
-
-        <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
-          <p>飼い主名</p>
+        <%= form_tag("/users/#{@user.id}/icon_update", {multipart: true}) do %>
+          <div class="user-preview">
+              <% if @user.image_name? %>
+                <%= image_tag @user.image_name.url %>
+                <% else %>
+                <%= image_tag "/assets/default.jpg" %>
+              <% end %>
+          </div>
+            <div class="user-icon-button">
+              <label>
+                <input name="image_name" type="file" accept="image/*" onchange="this.form.submit()">
+                <a>アイコンをアップロード</a>
+              </label>
+              <% if @user.image_name? %>
+              <%= link_to("アイコンを削除する", "/users/#{@user.id}/icon_destroy",{method:"image_name"}) %>
+              <% end %>
+            </div>
+        <% end %>
+        <div>
+        <%= form_tag("/users/#{@user.id}/update") do %>
+          <p>飼い主ID</p>
           <input name="name" value="<%= @user.name %>">
-          <p>画像</p>
-          <input name="image" type="file">
           <p>メールアドレス</p>
           <input name="email" value="<%= @user.email %>">
-          <button type="submit">変更する<i class="fas fa-paw"></i></button>
+          <button type="submit">変更する <i class="fas fa-paw"></i></button>
         <% end %>
+        </div>
       </div>
     </div>
   </div>
