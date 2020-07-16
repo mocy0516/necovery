@@ -14,7 +14,7 @@
             <%= link_to(post.user.name,"/users/#{post.user.id}") %>
           </div>
           <%= link_to image_tag(post.img.url),"/posts/#{post.id}" %>
-          <%= @likes_count %>
+          <br>
           <%= post.content %>
         </div>
       </div>
