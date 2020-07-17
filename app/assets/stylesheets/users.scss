@@ -148,3 +148,15 @@
   left:14%;
   font-family:"Nico Moji","ヒラギノ丸ゴ ProN",sans-serif;
 }
+
+/*responsive*/
+@media screen and (max-width: 600px){
+  .user-preview img {
+    margin:10px 0 20px 23% ;
+    object-fit: cover;
+  }
+  .user-icon-button {
+    padding:0 0 39% 8%;
+  }
+
+}

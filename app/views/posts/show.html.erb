@@ -9,12 +9,15 @@
         <% end %>
         <%= link_to(@user.name,"/users/#{@user.id}") %>
       </div>
+      <br>
       <div class="post-right">
         <%= image_tag @post.img.url%>
+        <div class="post-content">
+          <p>
+            <%= @post.content %>
+          </p>
+        </div>
       </div>
-      <p>
-        <%= @post.content %>
-      </p>
       <div class="post-time">
         <%= @post.created_at %>
       </div>

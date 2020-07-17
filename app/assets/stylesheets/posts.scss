@@ -147,3 +147,42 @@
   float: left;
   font-family:"Nico Moji","ヒラギノ丸ゴ ProN",sans-serif;
 }
+.post-content {
+  padding: 0 5% 0 0;
+  margin-top: 5px;
+}
+
+/*responsive*/
+@media screen and (max-width: 600px){
+  .post-left img,.post-user-name img{
+    width: 25px;
+    height: 25px;
+  }
+  .post-user-name a {
+    font-size: 10px;
+  }
+  .post-right {
+    margin: -8%;
+  }
+  .post-right img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 5%;
+    box-shadow: 0 2px 6px #c1ced7;
+    object-fit: cover;
+  }
+  .post-content {
+    padding: 0 3% 0 5%;
+    margin-bottom: 10px;
+  }
+  .post-img-button {
+    padding: 0 0 15% 23%;
+
+  }
+
+  .post-img-button a {
+    margin: 8px 14px  ;
+    padding: 6px 0 0 8%;
+    float: left;
+  }
+}

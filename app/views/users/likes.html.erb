@@ -8,7 +8,9 @@
         <%= image_tag "/assets/default.jpg" %>
       <% end %>
       <h2><%= @user.name %></h2>
+      <% if @user.id == @current_user.id %>
       <p><%= @user.email %></p>
+      <% end %>
       <% if @user.id == @current_user.id %>
         <%= link_to("編集", "/users/#{@user.id}/edit") %>
       <% end %>
@@ -22,17 +24,20 @@
       <div class="posts-index-item">
         <div class="post-left">
           <% if post.user.image_name? %>
-            <%= link_to image_tag(user.image_name.url),"/users/#{post.user.id}"  %>
+            <%= link_to image_tag(post.user.image_name.url),"/users/#{post.user.id}"  %>
           <% else %>
             <%= link_to image_tag("/assets/default.jpg"),"/users/#{post.user.id}" %>
           <% end %>
         </div>
+        <br>
         <div class="post-right">
           <div class="post-user-name">
             <%= link_to(post.user.name, "/users/#{post.user.id}") %>
           </div>
           <%= link_to image_tag(post.img.url),"/posts/#{post.id}" %>
+          <div class="post-content">
             <%= post.content %>
+          </div>
         </div>
       </div>
     <% end %>
