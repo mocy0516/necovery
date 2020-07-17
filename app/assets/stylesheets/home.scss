@@ -20,7 +20,6 @@ a {
 }
 
 h1{
-  text-align: center;
   color: coral;
 }
 
@@ -66,6 +65,7 @@ body {
 
 .container h1{
   font-size: 48px;
+  text-align: center;
 }
 
 /* header */
@@ -89,6 +89,39 @@ header {
   font-size: 45px;
 }
 
+.fas.menu-icon {
+  color: white;
+  float: right;
+  font-size: 25px;
+  padding: 21px 5%;
+  display:none;
+  position:relative;
+}
+
+.header-i{
+  width:100%;
+  position: fixed;
+  top: 0;
+  height: 0;
+  display: none;
+  color: lemonchiffon;
+  text-align: center;
+  z-index: 100;
+  margin-top:4em;
+}
+
+.header-menus-i{
+  background-color: darkgray;
+  padding-bottom:100%;
+}
+
+.header-menus-i li{
+  padding:1.5em 0 1.5em 0;
+}
+.header-menus-i a{
+  color: lemonchiffon;
+}
+
 .header-menus {
   float: right;
   padding-right: 30px;
@@ -105,15 +138,6 @@ header {
   float: left;
   font-size: 25px;
   color: lemonchiffon;
-}
-
-.header-menus input[type="submit"] {
-  padding: 0 20px;
-  float: left;
-  line-height: 64px;
-  color: lemonchiffon;
-  margin: 0;
-  font-size: 13px;
 }
 
 /* top */
@@ -141,6 +165,7 @@ header {
   font-weight: 500;
   line-height: 1.3;
   -webkit-font-smoothing: antialiased;
+  text-align: center;
 }
 
 .top-main button {
@@ -282,11 +307,38 @@ header {
 
 /*responsive*/
 @media screen and (max-width: 600px){
+  .header-menus{
+    display:none;
+  }
+  .fas.menu-icon{
+    display:block;
+  }
+  .top-main{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("/top2.jpg");
+    padding:120px 0 100px;
+  }
+  .top-main h1 {
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+    text-align: left;
+    padding-left: 10%;
+  }
+  .top-main button{
+    margin-top:20%;
+  }
   .container {
     margin: 10px 0 0 0;
     padding: 0;
   }
   .about-message{
+    text-align:left;
+  }
+  .about-message h1 {
     text-align:left;
   }
   .about-img{

@@ -22,11 +22,12 @@
           <%= link_to("ネコバリー", "/") %>
         <% end %>
       </div>
+      <span class="fas fa-bars menu-icon"></span>
       <ul class="header-menus">
         <% if @current_user %>
           <li><%= link_to(@current_user.name,"/users/#{@current_user.id}") %></li>
-          <li><%= link_to("リカバリーする","/posts/index") %></li>
-          <li><%= link_to("ネコバリーする","/posts/new") %></li>
+          <li><%= link_to("リカバリー","/posts/index") %></li>
+          <li><%= link_to("デリバリー","/posts/new") %></li>
           <li><%= link_to("飼い主一覧", "/users/index") %></li>
           <li><%= link_to("ログアウト","/logout",{method: :post}) %></li>
         <% else %>
@@ -41,6 +42,22 @@
         <%= flash[:notice]%>
       </div>
     <% end %>
+    <div class='header-i'>
+      <ul class="header-menus-i">
+        <% if @current_user %>
+          <li><%= link_to(@current_user.name,"/users/#{@current_user.id}") %></li>
+          <li><%= link_to("リカバリー","/posts/index") %></li>
+          <li><%= link_to("デリバリー","/posts/new") %></li>
+          <li><%= link_to("飼い主一覧", "/users/index") %></li>
+          <li><%= link_to("ログアウト","/logout",{method: :post}) %></li>
+        <% else %>
+          <li><%= link_to("ネコバリーとは？", "/about") %></li>
+          <li><%= link_to("飼い主になる", "/signup") %></li>
+          <li><%= link_to("ログイン", "/login") %></li>
+        <% end %>
+        <li class="close"><span>×閉じる</span></li>
+      </ul>
+    </div>
     <%= yield %>
   </body>
 </html>

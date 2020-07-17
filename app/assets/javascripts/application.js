@@ -6,10 +6,10 @@ document.addEventListener("turbolinks:load"
 , function () {
   $(function() {
     setTimeout(function(){
-      $('.flash').slideUp(500);
+      $(".flash").slideUp(500);
     },1000);
 
-    $('#postUp').change(function(e){
+    $("#postUp").change(function(e){
       //ファイル取得
       var file = e.target.files[0];
       var reader = new FileReader();
@@ -24,7 +24,7 @@ document.addEventListener("turbolinks:load"
       //アップロードした画像を設定
       reader.onload = (function(file){
         return function(e){
-          $("label").hide();
+          $(".post-img-button").remove();
           $(".after-select-img").show();
           $preview.append($('<img>').attr({
             src: e.target.result,
@@ -35,5 +35,9 @@ document.addEventListener("turbolinks:load"
 
       reader.readAsDataURL(file);
     });
+    $(".menu-icon").on("click",function(){
+      $(".header-i").show();
+      $(".header-i").slideUp(500);
+    })
   });
 });
