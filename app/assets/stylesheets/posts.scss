@@ -10,14 +10,6 @@
 }
 
 /*posts common?*/
-.post-left img {
-  width: 50px;
-  height: 50px;
-  border-radius: 40%;
-  box-shadow: 0 2px 6px #c1ced7;
-  object-fit: cover;
-}
-
 .post-user-name a {
   font-weight: 600;
 }
@@ -33,11 +25,6 @@
   box-shadow: 0 2px 6px #c1ced7;
   vertical-align: middle;
   object-fit: cover;
-}
-
-.post-left {
-  float: left;
-  width: 10%;
 }
 
 .post-right {
@@ -67,6 +54,10 @@
 .posts-show-item .post-user-name a {
   vertical-align: middle;
   font-size: 24px;
+  margin-left: 15px;
+}
+
+.post-user-name a{
   margin-left: 15px;
 }
 
@@ -152,14 +143,44 @@
   margin-top: 5px;
 }
 
+.ellipsis {
+  width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /*responsive*/
 @media screen and (max-width: 600px){
-  .post-left img,.post-user-name img{
-    width: 25px;
-    height: 25px;
+  .posts-index,.posts-show,.posts-new{
+    padding: 55px 0 0 0;
   }
-  .post-user-name a {
-    font-size: 10px;
+  
+  .post-user-name{
+    padding-bottom:2em;
+  }
+
+  .post-user-name img{
+    width:25px;
+    height:25px;
+  }
+
+  .posts-show-item .post-user-name a {
+    vertical-align: middle;
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .post-user-name a{
+    margin: 0;
+  }
+
+  .posts-show-item p{
+    font-size: 15px;
+  }
+
+  .post-user-name p{
+    font-size: 15px;
   }
   .post-right {
     margin: -8%;

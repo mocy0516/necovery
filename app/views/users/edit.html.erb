@@ -10,11 +10,11 @@
         <% end %>
         <%= form_tag("/users/#{@user.id}/icon_update", {multipart: true}) do %>
           <div class="user-preview">
-              <% if @user.image_name? %>
-                <%= image_tag @user.image_name.url %>
-                <% else %>
-                <%= image_tag "/assets/default.jpg" %>
-              <% end %>
+            <% if @user.image_name? %>
+              <%= image_tag @user.image_name.url %>
+            <% else %>
+              <%= image_tag "/assets/default.jpg" %>
+            <% end %>
           </div>
             <div class="user-icon-button">
               <label>
@@ -22,7 +22,9 @@
                 <a>アイコンをアップロード</a>
               </label>
               <% if @user.image_name? %>
-              <%= link_to("アイコンを削除する", "/users/#{@user.id}/icon_destroy",{method:"image_name"}) %>
+                <div class="user-icon-destroy">
+                  <%= link_to("アイコンを削除する", "/users/#{@user.id}/icon_destroy",{method:"image_name"}) %>
+                </div>
               <% end %>
             </div>
         <% end %>

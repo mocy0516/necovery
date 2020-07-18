@@ -19,7 +19,6 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name],
       email: params[:email],
-      image_name: params[:image_name],
       password: params[:password]
     )
     if @user.save
@@ -39,7 +38,6 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
-
     if @user.save
       flash[:notice] = "やりなおしたニャ！"
       redirect_to("/users/#{@user.id}")
@@ -61,7 +59,6 @@ class UsersController < ApplicationController
 
  def icon_destroy
    @user=User.find_by(id:params[:id])
-   @user.image_name = params[:image_name]
    @user.image_name = nil
    @user.save
    flash[:notice]="アイコンを削除したニャ！"

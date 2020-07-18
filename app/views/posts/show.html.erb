@@ -3,13 +3,12 @@
     <div class="posts-show-item">
       <div class="post-user-name">
         <% if @user.image_name? %>
-          <%= image_tag @user.image_name.url %>
+          <%= link_to image_tag(@user.image_name.url),"/users/#{@user.id}" %>
         <% else %>
-          <%= image_tag "/assets/default.jpg" %>
+          <%= link_to image_tag("/assets/default.jpg"),"/users/#{@user.id}" %>
         <% end %>
         <%= link_to(@user.name,"/users/#{@user.id}") %>
       </div>
-      <br>
       <div class="post-right">
         <%= image_tag @post.img.url%>
         <div class="post-content">

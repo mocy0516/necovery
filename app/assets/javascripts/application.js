@@ -24,7 +24,7 @@ document.addEventListener("turbolinks:load"
       //アップロードした画像を設定
       reader.onload = (function(file){
         return function(e){
-          $(".post-img-button").remove();
+          $(".post-img-button").hide();
           $(".after-select-img").show();
           $preview.append($('<img>').attr({
             src: e.target.result,
@@ -35,9 +35,11 @@ document.addEventListener("turbolinks:load"
 
       reader.readAsDataURL(file);
     });
-    $(".menu-icon").on("click",function(){
-      $(".header-i").show();
-      $(".header-i").slideUp(500);
-    })
+    $(function() {
+  　$('.toggle').on("click",function() {
+     $(this).toggleClass('active');
+     $('.menu').toggleClass('open');
+   });
+  });
   });
 });

@@ -124,9 +124,17 @@
 
 
 }
+.user-icon-button{
+  margin-left:18%;
+  margin-bottom:8%;
 
-.user-icon-button {
+}
+.user-icon-button label {
   padding:0 0 26% 18%;
+}
+
+.user-icon-destroy{
+  margin-bottom:25%;
 }
 
 .user-icon-button a {
@@ -151,12 +159,25 @@
 
 /*responsive*/
 @media screen and (max-width: 600px){
+  .users-new,.user-show,.users-edit,.users-index{
+    padding: 55px 0 0 0 ;
+  }
+
+  .users-heading{
+    margin:0;
+  }
   .user-preview img {
     margin:10px 0 20px 23% ;
     object-fit: cover;
   }
-  .user-icon-button {
+  .user-icon-button{
+    margin-left:8%;
+    margin-bottom:14%;
+  }
+  .user-icon-button label {
     padding:0 0 39% 8%;
   }
-
+  .user-icon-destroy{
+    margin-bottom: 35%;
+  }
 }
