@@ -31,10 +31,10 @@
           <% end %>
         <% end %>
       <% else %>
-        <a href="#"><span class="fas fa-heart like-btn"></span></a>
+        <a><span class="fas fa-heart like-btn"></span></a>
       <% end %>
       <%= @likes_count %>
-      <% if @post.user_id == @current_user.id %>
+      <% if @current_user && @post.user_id == @current_user.id %>
         <div class="post-menus">
           <%= link_to("編集", "/posts/#{@post.id}/edit") %>
           <%= link_to("削除", "/posts/#{@post.id}/destroy",{method:"post"}) %>

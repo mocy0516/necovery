@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get "/" => "home#top"
 
   post "likes/:post_id/create" => "likes#create"
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
   get "users/index" => "users#index"
   get "users/:id" => "users#show"
   get "users/:id/likes" => "users#likes"
+  get "users/:id/destroy_form" => "users#destroy_form"
+  post "users/:id/destroy" => "users#destroy"
   get "/login" => "users#login_form"
   post "login" => "users#login"
   post "logout" => "users#logout"

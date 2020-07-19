@@ -1,0 +1,16 @@
+<div class="main user-show">
+  <div class="container">
+    <h1 class="user-heading">アカウント削除</h1>
+    <div class="user">
+      <% if @user.image_name? %>
+        <%= image_tag @user.image_name.url %>
+      <% else %>
+        <%= image_tag "/assets/default.jpg" %>
+      <% end %>
+      <h2><%= @user.name %></h2>
+      <p><%= @user.email %></p>
+      <p>一度退会すると、ユーザー情報と投稿内容の全てが削除され、元には戻りません。</p>
+      <%= link_to("このアカウントを削除する", "/users/#{@user.id}/destroy",{method:"user"}) %>
+    </div>
+  </div>
+</div>

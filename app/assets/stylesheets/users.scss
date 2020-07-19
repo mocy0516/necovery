@@ -73,7 +73,7 @@
 }
 
 .user a {
-  color: #8899a6;
+  color: darkgray;
   text-decoration: underline;
   font-weight: 200;
 }
@@ -162,6 +162,13 @@
   font-family:"Nico Moji","ヒラギノ丸ゴ ProN",sans-serif;
 }
 
+#user-destroy_access {
+  margin-top:10%;
+  font-size:10px;
+  float:left;
+  text-decoration: underline;
+}
+
 /*responsive*/
 @media screen and (max-width: 600px){
   .users-new,.user-show,.users-edit,.users-index{
@@ -184,5 +191,8 @@
   }
   .user-icon-destroy{
     margin-bottom: 35%;
+  }
+  #user-destroy_access {
+    margin-top:15%;
   }
 }

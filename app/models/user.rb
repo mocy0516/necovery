@@ -9,4 +9,7 @@ class User < ApplicationRecord
     return Post.where(user_id: self.id)
   end
 
+  has_many :posts, :dependent => :destroy
+  has_many :likes, :dependent => :destroy
+
 end

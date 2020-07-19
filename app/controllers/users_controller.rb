@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user,{only:[:index,:edit,:update]}
+  before_action :authenticate_user,{only:[:index,:edit,:update,:destroy_form]}
   before_action :forbid_login_user,{only: [:new,:create,:login_form,:login]}
-  before_action :ensure_correct_user,{only: [:edit,:update]}
+  before_action :ensure_correct_user,{only: [:edit,:update,:destroy_form]}
 
   def index
     @users = User.all
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "飼い主になったニャ！"
-      redirect_to("/users/#{@user.id}")
+      redirect_to("/posts/index")
     else
       render("users/new")
     end
@@ -98,6 +98,17 @@ class UsersController < ApplicationController
        flash[:notice] ="別の飼い主だニャ！"
        redirect_to("/posts/index")
    end
+ end
+
+ def destroy_form
+   @user = User.find_by(id: params[:id])
+ end
+
+ def destroy
+   @user=User.find_by(id:params[:id])
+   @user.destroy
+   flash[:notice]="アカウントを削除しました"
+   redirect_to("/")
  end
 
 end

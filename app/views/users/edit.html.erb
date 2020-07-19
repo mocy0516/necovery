@@ -37,6 +37,9 @@
           <button type="submit">変更する <i class="fas fa-paw"></i></button>
         <% end %>
         </div>
+        <div id="user-destroy_access">
+          <%= link_to("このアカウントを削除","/users/#{@user.id}/destroy_form") %>
+        </div>
       </div>
     </div>
   </div>

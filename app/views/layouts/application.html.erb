@@ -34,7 +34,11 @@
       <div class="menu">
         <ul>
         <% if @current_user %>
-          <li><%= link_to(@current_user.name,"/users/#{@current_user.id}") %></li>
+          <% if @current_user.image_name? %>
+            <li class="menu-icon"><%= link_to image_tag(@current_user.image_name.url),"/users/#{@current_user.id}" %></li>
+          <% else %>
+            <li class="menu-icon"><%= link_to image_tag("/assets/default.jpg"),"/users/#{@current_user.id}" %></li>
+          <% end %>
           <li><%= link_to("リカバリー","/posts/index") %></li>
           <li><%= link_to("デリバリー","/posts/new") %></li>
           <li><%= link_to("飼い主一覧", "/users/index") %></li>
@@ -50,7 +54,11 @@
 
       <ul class="header-menus">
         <% if @current_user %>
-          <li><%= link_to(@current_user.name,"/users/#{@current_user.id}") %></li>
+        <% if @current_user.image_name? %>
+          <li><%= link_to image_tag(@current_user.image_name.url),"/users/#{@current_user.id}" %></li>
+        <% else %>
+          <li><%= link_to image_tag("/assets/default.jpg"),"/users/#{@current_user.id}" %></li>
+        <% end %>
           <li><%= link_to("リカバリー","/posts/index") %></li>
           <li><%= link_to("デリバリー","/posts/new") %></li>
           <li><%= link_to("飼い主一覧", "/users/index") %></li>
