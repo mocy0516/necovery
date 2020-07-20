@@ -151,11 +151,11 @@
 }
 
 /*responsive*/
-@media screen and (max-width: 600px){
+@media screen and (max-width: 480px){
   .posts-index,.posts-show,.posts-new{
     padding: 55px 0 0 0;
   }
-  
+
   .post-user-name{
     padding-bottom:2em;
   }
