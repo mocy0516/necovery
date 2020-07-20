@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  mount_uploader :img, ImgUploader
+  mount_uploader :img, PicUploader
   validates :content, {length:{maximum:140}}
   validates :user_id, {presence:true}
 
