@@ -13,13 +13,13 @@ $(function(){
     $('#loader-bg ,#loader').height(h).css('display','block');
   });
 
-  $(window).on('load',function () { //全ての読み込みが完了したら実行
+  $(window).on('load',function () {
     $('#loader-bg').delay(900).fadeOut(800);
     $('#loader').delay(600).fadeOut(300);
     $('<body>').css('display', 'block');
   });
 
-  //5秒たったら強制的にロード画面を非表示
+
   $(function(){
     setTimeout('stopload()',5000);
   });
@@ -40,18 +40,9 @@ $(function(){
   $(document).on('turbolinks:load', function() {
     //post.img input prevew
     $("#postUp").change(function(e){
-        //ファイル取得
         var file = e.target.files[0];
         var reader = new FileReader();
         var $preview = $("#preview");
-
-        //画像でない場合は処理終了
-        if(file.type.indexOf("image") < 0){
-          alert("画像ファイルを指定してください。");
-        return false;
-        }
-
-        //アップロードした画像を設定
         reader.onload = (function(file){
           return function(e){
             $(".post-img-button").hide();
@@ -62,7 +53,6 @@ $(function(){
             }));
           };
         })(file);
-
         reader.readAsDataURL(file);
     });
 
@@ -74,5 +64,5 @@ $(function(){
         });
       });
   });
-  
+
 });
