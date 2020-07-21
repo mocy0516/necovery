@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :ensure_correct_user,{only: [:edit,:update,:destroy_form]}
 
   def index
-    @users = User.all
+    @users = User.all.order(:name)
   end
 
   def show
