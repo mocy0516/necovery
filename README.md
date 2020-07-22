@@ -7,7 +7,7 @@
 <h3>https://necovery.herokuapp.com/</h3><br>
 ※トップページのログイン画面に、ゲストユーザー情報を入力済み。<br>
 そのままログインボタンを押すと、ゲストユーザとしてログインできます。<br>
-メールアドレス : guest@example.com
+メールアドレス : guest@example.com<br>
 パスワード : guest-user
 
 # 概要
